@@ -3,32 +3,53 @@ using namespace std;
 
 int main()
 {
-    int amount;
+  int amount;
   int Balance = 10000, option;
 
-  cout<<"clic"
-  
-    cout<<"WELCOME TO ATM"<<endl;
-    cout<<"==============="<<endl;
+  cout<<"click 1 for withdraw\n click 2 for deposit\n click 3 for check balance: ";
+  cin>> option;
 
-
-    cout<<"1.Withdraw"<<endl;
-    cout<<"2.Deposit"<<endl;
-    cout<<"3.Change pin"<<endl;
-    cout<<"4.Balance check"<<endl;
-   
-
-     cout<<"ENter the amount";
-     cin>>amount;
-
-    if ( amount>0 && amount<=10000 )
+  if (option==1)
+  {
+    cout<<"Enter amount: ";
+    cin>>amount;
+    
+    if(amount>0 && amount <=Balance)
     {
-      cout<<"withdrwal amount:"<<amount<<endl<<"Remaining amount"<< (Balance) -(amount)<<endl;
+    cout<<"After withdrwal your amount is : "<<Balance-amount;
     }
+    else
+   {
+    cout<<"Invalid amount";
+   }
+  }
+
+else if (option==2)
+  {
+  cout<<"Enter Amount";
+  cin>>amount;
+
+  if (amount>0)
+  {
+  Balance+=amount;
+  cout<<"After deposite your amount is: "<<Balance;
+  }
+  else
+  {
+  cout<<"Invalid amount";
+  }
+  }
+
+  else if (option==3)
+  {
+    cout<<"your balance amount is : "<<Balance;
+  
+  }
+
+  else
+  cout<<"Invalid";
 
 
+  return 0;
 
-
-
-    return 0;
 }
